@@ -13,14 +13,14 @@ import androidx.core.app.NotificationCompat;
 
 public class Receiver extends BroadcastReceiver {
 
-    int requestCode;
+    int requestCode = 12345;
 
     @Override
     public void onReceive(Context context, Intent intent) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            NotificationChannel channel = new NotificationChannel("default", "Default Channel", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel("default", "Default Channel", NotificationManager.IMPORTANCE_HIGH);
             channel.setDescription("This is a default notification");
             notificationManager.createNotificationChannel(channel);
 
@@ -33,7 +33,7 @@ public class Receiver extends BroadcastReceiver {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "default");
         builder.setContentTitle("Fun Fact");
         builder.setContentText("Continue to read now");
-        builder.setSmallIcon(R.drawable.ic_launcher_background);
+        builder.setSmallIcon(android.R.drawable.ic_dialog_info);
         builder.setContentIntent(pendingIntent);
         builder.setAutoCancel(true);
 

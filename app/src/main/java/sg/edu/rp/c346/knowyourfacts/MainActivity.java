@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Calendar c = Calendar.getInstance();
-                c.add(Calendar.MINUTE,5);
+                c.add(Calendar.SECOND,5);
 
                 Intent i = new Intent(MainActivity.this, Receiver.class);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, reqeustCode, i, PendingIntent.FLAG_CANCEL_CURRENT);
