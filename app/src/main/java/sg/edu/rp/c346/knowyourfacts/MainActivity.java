@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Calendar c = Calendar.getInstance();
-                c.add(Calendar.SECOND,5);
+                c.add(Calendar.MINUTE,5);
 
                 Intent i = new Intent(MainActivity.this, Receiver.class);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, reqeustCode, i, PendingIntent.FLAG_CANCEL_CURRENT);
                 AlarmManager am = (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
                 am.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-                Toast.makeText(MainActivity.this, "Notification has been set to 5 seconds...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Notification has been set to 5 minutes...", Toast.LENGTH_SHORT).show();
             }
         });
     }

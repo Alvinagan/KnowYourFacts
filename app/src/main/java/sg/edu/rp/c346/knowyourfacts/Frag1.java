@@ -11,7 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.squareup.picasso.Picasso;
 
 
 /**
@@ -20,6 +23,7 @@ import android.widget.LinearLayout;
 public class Frag1 extends Fragment {
 
     Button btnColor;
+    ImageView iv;
     LinearLayout linearLayout1;
     Integer i = 0;
 
@@ -35,6 +39,11 @@ public class Frag1 extends Fragment {
 
         btnColor = view.findViewById(R.id.btnColor);
         linearLayout1 = view.findViewById(R.id.linearlayout1);
+        iv = view.findViewById(R.id.iv);
+
+        String imageURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV4t002yQboQAUcFodz7Ek8pqOMQyg5ArvMiwBlFJ9dmy6fg4I";
+
+        Picasso.with(getActivity()).load(imageURL).into(iv);
 
         btnColor.setOnClickListener(new View.OnClickListener() {
             @Override
