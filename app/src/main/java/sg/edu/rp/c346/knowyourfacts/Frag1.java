@@ -21,6 +21,7 @@ public class Frag1 extends Fragment {
 
     Button btnColor;
     LinearLayout linearLayout1;
+    Integer i = 0;
 
     public Frag1() {
         // Required empty public constructor
@@ -38,7 +39,14 @@ public class Frag1 extends Fragment {
         btnColor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                linearLayout1.setBackgroundColor(Color.MAGENTA);
+                if ( i == 0){
+                    linearLayout1.setBackgroundColor(Color.MAGENTA);
+                    i = 1;
+                } else {
+
+                    linearLayout1.setBackgroundColor(Color.parseColor("#33B5E5"));
+                    i = 0;
+                }
             }
         });
 
